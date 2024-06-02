@@ -39,6 +39,15 @@
 					"options": {
 						"functions": ["clsx", "cva", "tw"]
 					}
+				},
+				"noRestrictedImports": {
+					"level": "error",
+					"options": {
+						"paths": {
+							"next/link": "Please import from `@navigation` instead.",
+							"next/navigation": "Please import from `@navigation` instead."
+						}
+					}
 				}
 			}
 		}

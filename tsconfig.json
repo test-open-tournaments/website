@@ -16,8 +16,12 @@
 		"plugins": [{ "name": "next" }],
 		"paths": {
 			"@env": ["./src/env.ts"],
+			"@types": ["./src/types/index.ts"],
+			"@utils/*": ["./src/lib/utils/*"],
+			"@metadata": ["./src/lib/metadata.ts"],
 			"@actions/*": ["./src/lib/actions/*"],
 			"@dataModel": ["./convex/_generated/dataModel"],
+			"@navigation": ["./src/lib/navigation.ts"],
 			"~/*": ["./src/*"]
 		}
 	},

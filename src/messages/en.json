@@ -8,5 +8,10 @@
 	},
 	"Metadata": {
 		"description": "TEST Open, osu!'s only large scale lazer tournament."
+	},
+	"APICallbacks": {
+		"Errors": {
+			"missingCode": "Sorry, but the sign in couldn't be completed. If unexpected please try again otherwise feel free to navigate back home."
+		}
 	}
 }

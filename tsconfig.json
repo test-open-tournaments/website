@@ -16,8 +16,11 @@
 		"plugins": [{ "name": "next" }],
 		"paths": {
 			"@env": ["./src/env.ts"],
+			"@osu": ["./src/lib/osu.ts"],
+			"@discord": ["./src/lib/discord.ts"],
 			"@types": ["./src/types/index.ts"],
 			"@utils/*": ["./src/lib/utils/*"],
+			"@session": ["./src/lib/session.ts"],
 			"@metadata": ["./src/lib/metadata.ts"],
 			"@actions/*": ["./src/lib/actions/*"],
 			"@dataModel": ["./convex/_generated/dataModel"],

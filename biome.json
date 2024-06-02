@@ -4,10 +4,12 @@
 		"enabled": true
 	},
 	"formatter": {
-		"enabled": true
+		"enabled": true,
+		"ignore": ["./convex/_generated/**"]
 	},
 	"linter": {
 		"enabled": true,
+		"ignore": ["./convex/_generated/**"],
 		"rules": {
 			"recommended": true,
 			"a11y": {

@@ -10,11 +10,13 @@
  */
 
 import type {
-	ApiFromModules,
-	FilterApi,
-	FunctionReference
-} from 'convex/server'
-import type * as schemas_users from '../schemas/users.js'
+  ApiFromModules,
+  FilterApi,
+  FunctionReference,
+} from "convex/server";
+import type * as functions_user from "../functions/user.js";
+import type * as https from "../https.js";
+import type * as schemas_users from "../schemas/users.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -25,13 +27,15 @@ import type * as schemas_users from '../schemas/users.js'
  * ```
  */
 declare const fullApi: ApiFromModules<{
-	'schemas/users': typeof schemas_users
-}>
+  "functions/user": typeof functions_user;
+  https: typeof https;
+  "schemas/users": typeof schemas_users;
+}>;
 export declare const api: FilterApi<
-	typeof fullApi,
-	FunctionReference<any, 'public'>
->
+  typeof fullApi,
+  FunctionReference<any, "public">
+>;
 export declare const internal: FilterApi<
-	typeof fullApi,
-	FunctionReference<any, 'internal'>
->
+  typeof fullApi,
+  FunctionReference<any, "internal">
+>;

@@ -2,6 +2,7 @@
 	"name": "website",
 	"version": "0.1.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "next dev --turbo",
 		"build": "next build",
@@ -9,7 +10,10 @@
 		"format": "biome format --write ./",
 		"lint": "biome lint ./",
 		"types": "tsc --pretty --noEmit",
-		"review": "bun biome check --apply ./ && bun types"
+		"review": "bun biome check --apply ./ && bun types",
+		"test": "vitest",
+		"test:next": "vitest --project next",
+		"test:convex": "vitest --project convex"
 	},
 	"dependencies": {
 		"@t3-oss/env-nextjs": "^0.10.1",
@@ -25,14 +29,20 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.7.3",
+		"@edge-runtime/vm": "^3.2.0",
 		"@tailwindcss/postcss": "^4.0.0-alpha.15",
+		"@testing-library/react": "^15.0.7",
 		"@types/bun": "^1.1.3",
 		"@types/node": "^20.12.12",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.0",
 		"convex-test": "^0.0.21",
+		"jsdom": "^24.1.0",
 		"postcss": "^8.4.38",
 		"tailwindcss": "^4.0.0-alpha.15",
-		"typescript": "^5.4.5"
+		"typescript": "^5.4.5",
+		"vite-tsconfig-paths": "^4.3.2",
+		"vitest": "^1.6.0"
 	}
 }

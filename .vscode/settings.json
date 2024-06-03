@@ -1,3 +1,11 @@
 {
-	"i18n-ally.localesPaths": ["src/messages"]
+	"i18n-ally.localesPaths": ["src/messages"],
+	"workbench.editor.customLabels.patterns": {
+		"**/app/**/page.tsx": "${dirname} | page",
+		"**/app/**/layout.tsx": "${dirname} | layout",
+		"**/components/**/index.tsx": "${dirname} | component",
+		"**/components/**": "${filename} | component",
+		"**/_components/**/index.tsx": "${dirname} | component",
+		"**/_components/**": "${filename} | component"
+	}
 }

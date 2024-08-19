@@ -15,13 +15,6 @@ export const discordAuth = new Auth({
   ).toString('base64')
 })
 
-export function getDiscordAuthUrl(redirectUri?: string) {
-  return discordAuth.generateAuthUrl({
-    scope: ['identify', 'guilds.members.read'],
-    redirectUri: redirectUri ?? env.NEXT_PUBLIC_DISCORD_REDIRECT_URI
-  })
-}
-
 export function needRefresh(err: unknown) {
   return err instanceof DiscordHTTPError && err.code === 401
 }

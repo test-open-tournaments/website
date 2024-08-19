@@ -45,15 +45,15 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
-        <ConvexProvider>
-          <NextIntlClientProvider messages={messages}>
+      <ConvexProvider>
+        <NextIntlClientProvider messages={messages}>
+          <body className={inter.className}>
             {children}
-          </NextIntlClientProvider>
-        </ConvexProvider>
-        <SpeedInsights />
-        <Analytics />
-      </body>
+            <SpeedInsights />
+            <Analytics />
+          </body>
+        </NextIntlClientProvider>
+      </ConvexProvider>
     </html>
   )
 }

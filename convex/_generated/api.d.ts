@@ -14,8 +14,10 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as actions_clerk from "../actions/clerk.js";
 import type * as functions_user from "../functions/user.js";
-import type * as https from "../https.js";
+import type * as http from "../http.js";
+import type * as httpActions_clerk from "../httpActions/clerk.js";
 import type * as schemas_users from "../schemas/users.js";
 
 /**
@@ -27,8 +29,10 @@ import type * as schemas_users from "../schemas/users.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  "actions/clerk": typeof actions_clerk;
   "functions/user": typeof functions_user;
-  https: typeof https;
+  http: typeof http;
+  "httpActions/clerk": typeof httpActions_clerk;
   "schemas/users": typeof schemas_users;
 }>;
 export declare const api: FilterApi<

@@ -1,70 +1,44 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.0/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
-	"formatter": {
-		"enabled": true,
-		"ignore": ["./convex/_generated/**"]
-	},
-	"linter": {
-		"enabled": true,
-		"ignore": ["./convex/_generated/**"],
-		"rules": {
-			"recommended": true,
-			"a11y": {
-				"useValidAnchor": "off"
-			},
-			"correctness": {
-				"noUnusedImports": "warn"
-			},
-			"style": {
-				"useForOf": "warn",
-				"useConsistentArrayType": {
-					"level": "error",
-					"options": {
-						"syntax": "shorthand"
-					}
-				},
-				"useFilenamingConvention": {
-					"level": "error",
-					"options": {
-						"filenameCases": ["kebab-case"]
-					}
-				}
-			},
-			"nursery": {
-				"useSortedClasses": {
-					"level": "warn",
-					"options": {
-						"functions": ["clsx", "cva", "tw"]
-					}
-				},
-				"noRestrictedImports": {
-					"level": "error",
-					"options": {
-						"paths": {
-							"next/link": "Please import from `@navigation` instead.",
-							"next/navigation": "Please import from `@navigation` instead."
-						}
-					}
-				}
-			}
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"semicolons": "asNeeded",
-			"quoteStyle": "single",
-			"jsxQuoteStyle": "single",
-			"arrowParentheses": "asNeeded",
-			"trailingCommas": "none",
-			"indentStyle": "tab"
-		}
-	},
-	"vcs": {
-		"enabled": true,
-		"clientKind": "git",
-		"useIgnoreFile": true
-	}
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "files": {
+    "ignore": ["./convex/_generated/*"]
+  },
+  "organizeImports": {
+    "enabled": false
+  },
+  "formatter": {
+    "enabled": false
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "useValidAnchor": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "warn"
+      },
+      "style": {
+        "useForOf": "warn",
+        "useConsistentArrayType": {
+          "level": "error",
+          "options": {
+            "syntax": "shorthand"
+          }
+        },
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "filenameCases": ["kebab-case"]
+          }
+        }
+      }
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  }
 }

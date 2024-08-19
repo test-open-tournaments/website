@@ -1,29 +1,29 @@
 import 'server-only'
 
 import { REST } from '@discordjs/rest'
-import { env } from '@env'
 import Auth, { DiscordHTTPError } from 'discord-oauth2'
+import { env } from '@env'
 
 const rest = new REST({ version: '10' }).setToken(env.DISCORD_BOT_TOKEN)
 
 export const discordAuth = new Auth({
-	clientId: env.NEXT_PUBLIC_DISCORD_CLIENT_ID,
-	clientSecret: env.DISCORD_CLIENT_SECRET,
-	redirectUri: env.NEXT_PUBLIC_DISCORD_REDIRECT_URI,
-	credentials: Buffer.from(
-		`${env.NEXT_PUBLIC_DISCORD_CLIENT_ID}:${env.DISCORD_CLIENT_SECRET}`
-	).toString('base64')
+  clientId: env.NEXT_PUBLIC_DISCORD_CLIENT_ID,
+  clientSecret: env.DISCORD_CLIENT_SECRET,
+  redirectUri: env.NEXT_PUBLIC_DISCORD_REDIRECT_URI,
+  credentials: Buffer.from(
+    `${env.NEXT_PUBLIC_DISCORD_CLIENT_ID}:${env.DISCORD_CLIENT_SECRET}`
+  ).toString('base64')
 })
 
 export function getDiscordAuthUrl(redirectUri?: string) {
-	return discordAuth.generateAuthUrl({
-		scope: ['identify', 'guilds.members.read'],
-		redirectUri: redirectUri ?? env.NEXT_PUBLIC_DISCORD_REDIRECT_URI
-	})
+  return discordAuth.generateAuthUrl({
+    scope: ['identify', 'guilds.members.read'],
+    redirectUri: redirectUri ?? env.NEXT_PUBLIC_DISCORD_REDIRECT_URI
+  })
 }
 
 export function needRefresh(err: unknown) {
-	return err instanceof DiscordHTTPError && err.code === 401
+  return err instanceof DiscordHTTPError && err.code === 401
 }
 
 // export async function refreshDiscordToken(tokens: Tables<'tokens'>) {

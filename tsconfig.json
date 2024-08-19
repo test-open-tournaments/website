@@ -1,40 +1,40 @@
 {
-	"compilerOptions": {
-		"target": "ES2017",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"incremental": true,
-		"plugins": [{ "name": "next" }],
-		"paths": {
-			"@env": ["./src/env.ts"],
-			"@osu": ["./src/lib/osu.ts"],
-			"@discord": ["./src/lib/discord.ts"],
-			"@types": ["./src/types/index.ts"],
-			"@utils/*": ["./src/lib/utils/*"],
-			"@session": ["./src/lib/session.ts"],
-			"@metadata": ["./src/lib/metadata.ts"],
-			"@actions/*": ["./src/lib/actions/*"],
-			"@dataModel": ["./convex/_generated/dataModel"],
-			"@navigation": ["./src/lib/navigation.ts"],
-			"~/*": ["./src/*"]
-		}
-	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		".next/types/**/*.ts",
-		"src/vitest.config.ts",
-		"convex/vitest.config.ts"
-	],
-	"exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@env": ["./src/env.ts"],
+      "@osu": ["./src/lib/osu.ts"],
+      "@discord": ["./src/lib/discord.ts"],
+      "@types": ["./src/types/index.ts"],
+      "@utils/*": ["./src/lib/utils/*"],
+      "@session": ["./src/lib/session.ts"],
+      "@metadata": ["./src/lib/metadata.ts"],
+      "@actions/*": ["./src/lib/actions/*"],
+      "@dataModel": ["./convex/_generated/dataModel"],
+      "@navigation": ["./src/lib/navigation.ts"],
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/vitest.config.ts",
+    "convex/vitest.config.ts"
+  ],
+  "exclude": ["node_modules"]
 }

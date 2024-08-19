@@ -1,19 +1,19 @@
 'use client'
 
-import { env } from '@env'
 import {
-	ConvexProvider as ConvexClientProvider,
-	ConvexReactClient
+  ConvexProvider as ConvexClientProvider,
+  ConvexReactClient
 } from 'convex/react'
+import { env } from '@env'
 
 import type { ReactNode } from 'react'
 
 const convex = new ConvexReactClient(env.NEXT_PUBLIC_CONVEX_URL)
 
 interface ConvexProviderProps {
-	children: ReactNode
+  children: ReactNode
 }
 
 export default function ConvexProvider({ children }: ConvexProviderProps) {
-	return <ConvexClientProvider client={convex}>{children}</ConvexClientProvider>
+  return <ConvexClientProvider client={convex}>{children}</ConvexClientProvider>
 }

@@ -1,17 +1,17 @@
 {
-	"HomePage": {
-		"comingSoon": "Coming Back in 2025",
-		"OldSite": {
-			"message": "Looking for TEST Open 2024? Check out the previous site",
-			"link": "here"
-		}
-	},
-	"Metadata": {
-		"description": "TEST Open, osu!'s only large scale lazer tournament."
-	},
-	"APICallbacks": {
-		"Errors": {
-			"missingCode": "Sorry, but the sign in couldn't be completed. If unexpected please try again otherwise feel free to navigate back home."
-		}
-	}
+  "HomePage": {
+    "comingSoon": "Coming Back in 2025",
+    "OldSite": {
+      "message": "Looking for TEST Open 2024? Check out the previous site",
+      "link": "here"
+    }
+  },
+  "Metadata": {
+    "description": "TEST Open, osu!'s only large scale lazer tournament."
+  },
+  "APICallbacks": {
+    "Errors": {
+      "missingCode": "Sorry, but the sign in couldn't be completed. If unexpected please try again otherwise feel free to navigate back home."
+    }
+  }
 }

@@ -9,10 +9,8 @@
 		"format": "biome format --write",
 		"lint": "biome lint",
 		"types": "tsc --pretty --noEmit",
-		"test": "vitest run",
-		"test:watch": "vitest",
-		"test:next": "vitest --project next",
-		"test:convex": "vitest --project convex",
+		"test": "vitest",
+    "test:once": "vitest run",
 		"review": "bun biome check --write && bun types & bun run test"
 	},
 	"dependencies": {

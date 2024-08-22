@@ -25,11 +25,27 @@ export const webhookSync = httpAction(async (ctx, request) => {
 
     switch (result.type) {
       case 'user.created': {
-        console.log('user created')
+        const { data } = result
+        if (!data.external_accounts[0]?.username) {
+          throw new Error('Missing external account information.')
+        }
+
+        await ctx.runMutation(internal.functions.user.create, {
+          clerkId: data.id,
+          osuId: data.external_accounts[0].provider_user_id,
+          osuName: data.external_accounts[0].username
+        })
+        break
+      }
+      case 'user.updated': {
+        console.log('user updated', result.data)
         break
       }
       case 'user.deleted': {
-        console.log('user created')
+        if (!result.data.id) throw new Error('Missing Clerk user id.')
+        await ctx.runMutation(internal.functions.user.remove, {
+          clerkId: result.data.id
+        })
         break
       }
     }

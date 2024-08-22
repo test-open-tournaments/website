@@ -19,6 +19,7 @@ import type * as functions_user from "../functions/user.js";
 import type * as http from "../http.js";
 import type * as httpActions_clerk from "../httpActions/clerk.js";
 import type * as schemas_users from "../schemas/users.js";
+import type * as utils from "../utils.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -34,6 +35,7 @@ declare const fullApi: ApiFromModules<{
   http: typeof http;
   "httpActions/clerk": typeof httpActions_clerk;
   "schemas/users": typeof schemas_users;
+  utils: typeof utils;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,

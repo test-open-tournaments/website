@@ -1,7 +1,6 @@
 import { genOgTwitterImage } from '@metadata'
 import { getBaseUrl, inter } from '@utils/client'
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 
@@ -49,7 +48,6 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <body className={inter.className}>
             {children}
-            <SpeedInsights />
             <Analytics />
           </body>
         </NextIntlClientProvider>

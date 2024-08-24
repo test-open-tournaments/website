@@ -1,25 +1,9 @@
-import { Link } from '@navigation'
-import { useTranslations } from 'next-intl'
+import { isProd } from '@utils/client'
+import { get } from '@vercel/edge-config'
 
-export default function HomePage() {
-  const t = useTranslations('HomePage')
+import ComingSoon from './_components/coming-soon'
 
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-[url('/images/background.jpg')] bg-cover px-3 text-[#070427]">
-      <div className='grid gap-1'>
-        <h1 className='font-black text-5xl'>
-          TEST <span className='font-medium'>Open</span>
-        </h1>
-        <p className='text-center text-xl italic'>{t('comingSoon')}</p>
-      </div>
-
-      <p className='text-center text-sm'>
-        {`${t('OldSite.message')} `}
-        <Link href='https://2024.test-open.com' className='underline'>
-          {t('OldSite.link')}
-        </Link>
-        .
-      </p>
-    </main>
-  )
+export default async function HomePage() {
+  const isPrerelease = (await get('prerelease')) && isProd
+  return isPrerelease ? <ComingSoon /> : <div>TEST OPEN</div>
 }

@@ -24,7 +24,7 @@
       "@metadata": ["./src/lib/metadata.ts"],
       "@actions/*": ["./src/lib/actions/*"],
       "@dataModel": ["./convex/_generated/dataModel"],
-      "@navigation": ["./src/lib/navigation.ts"],
+      "@navigation": ["./src/i18n/routing.ts"],
       "~/*": ["./src/*"]
     }
   },

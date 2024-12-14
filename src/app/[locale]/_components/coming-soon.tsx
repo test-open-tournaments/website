@@ -1,11 +1,13 @@
 import { Link } from '@navigation'
 import { useTranslations } from 'next-intl'
 
+import Background from '~/components/background'
+
 export default function ComingSoon() {
   const t = useTranslations('HomePage')
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-[url('/images/background.jpg')] bg-cover px-3 text-[#070427]">
+    <Background className='flex min-h-screen flex-col items-center justify-center gap-6 px-3 text-[#070427]'>
       <div className='grid gap-1'>
         <h1 className='font-black text-5xl'>
           TEST <span className='font-medium'>Open</span>
@@ -20,6 +22,6 @@ export default function ComingSoon() {
         </Link>
         .
       </p>
-    </main>
+    </Background>
   )
 }

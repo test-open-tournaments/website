@@ -1,5 +1,5 @@
-import { cookies } from 'next/headers'
 import { getTranslations } from 'next-intl/server'
+import { cookies } from 'next/headers'
 
 import 'server-only'
 
@@ -11,6 +11,6 @@ export async function getServerTranslations<
     NestedKeyOf<IntlMessages>
   > = never
 >(namespace?: NestedKey) {
-  const locale = cookies().get('NEXT_LOCALE')?.value ?? 'en'
+  const locale = (await cookies()).get('NEXT_LOCALE')?.value ?? 'en'
   return await getTranslations({ locale, namespace })
 }

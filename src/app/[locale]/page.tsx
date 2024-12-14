@@ -8,7 +8,7 @@ import UserButton from './_components/user-button'
 
 export default async function HomePage() {
   const isPrerelease = (await get('prerelease')) && isProd
-  const { userId } = auth()
+  const { userId } = await auth()
   return isPrerelease ? (
     <ComingSoon />
   ) : (

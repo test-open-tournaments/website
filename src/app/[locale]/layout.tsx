@@ -2,16 +2,16 @@ import { genOgTwitterImage } from '@metadata'
 import { getBaseUrl, inter } from '@utils/client'
 import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, getTranslations } from 'next-intl/server'
+import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 
 import '../../styles/globals.css'
 
 import ConvexProvider from './_components/convex-provider'
 
-import type { MetadataProps } from '@types'
 import type { Metadata } from 'next'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata() {
+  const locale = await getLocale()
   const t = await getTranslations({ locale, namespace: 'Metadata' })
   return {
     metadataBase: new URL(getBaseUrl()),
@@ -33,24 +33,22 @@ export async function generateMetadata({ params: { locale } }: MetadataProps) {
 
 interface LocaleLayoutProps {
   children: React.ReactNode
-  params: { locale: string }
 }
 
-export default async function LocaleLayout({
-  children,
-  params: { locale }
-}: LocaleLayoutProps) {
+export default async function LocaleLayout({ children }: LocaleLayoutProps) {
+  const locale = await getLocale()
   const messages = await getMessages()
 
   return (
     <html lang={locale}>
       <ConvexProvider>
-        <NextIntlClientProvider messages={messages}>
-          <body className={inter.className}>
+        <body className={inter.className}>
+          <NextIntlClientProvider messages={messages}>
             {children}
-            <Analytics />
-          </body>
-        </NextIntlClientProvider>
+          </NextIntlClientProvider>
+
+          <Analytics />
+        </body>
       </ConvexProvider>
     </html>
   )
